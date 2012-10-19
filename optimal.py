@@ -21,7 +21,7 @@ def optimal_meeting_point(rows, columns, persons) :
 	for i in range(0,rows-1) :
 		totalDist = 0
 		for person in persons :
-			totalDist += abs(i - person.x)
+			totalDist += abs(i - person.row)
 
 		if totalDist < optimalRowDist :
 			optimalRowDist = totalDist
@@ -30,7 +30,7 @@ def optimal_meeting_point(rows, columns, persons) :
 	for j in range(0, columns-1) :
 		totalDist = 0
 		for person in persons :
-			totalDist += abs(j - person.y)
+			totalDist += abs(j - person.col)
 
 		if totalDist < optimalColDist :
 			optimalColDist = totalDist
@@ -39,9 +39,9 @@ def optimal_meeting_point(rows, columns, persons) :
 	return (optimalRow,optimalCol)
 
 class Person :
-	def __init__(self, x, y) :
-		self.x = x
-		self.y = y
+	def __init__(self, row, col) :
+		self.row = row
+		self.col = col
 
 if __name__ == "__main__" :
 	main()
