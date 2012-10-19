@@ -6,8 +6,8 @@ def main():
 	persons = []
 
 	persons.append(Person(2,2))
-	persons.append(Person(2,2))
-	persons.append(Person(2,2))
+	persons.append(Person(3,1))
+	persons.append(Person(3,3))
 	#persons.append(Person(1,2))
 
 	point = optimal_meeting_point(rows, columns, persons)
@@ -21,7 +21,7 @@ def optimal_meeting_point(rows, columns, persons) :
 	for i in range(0,rows-1) :
 		totalDist = 0
 		for person in persons :
-			totalDist += abs(i - person.y)
+			totalDist += abs(i - person.x)
 
 		if totalDist < optimalRowDist :
 			optimalRowDist = totalDist
@@ -30,7 +30,7 @@ def optimal_meeting_point(rows, columns, persons) :
 	for j in range(0, columns-1) :
 		totalDist = 0
 		for person in persons :
-			totalDist += abs(j - person.x)
+			totalDist += abs(j - person.y)
 
 		if totalDist < optimalColDist :
 			optimalColDist = totalDist
