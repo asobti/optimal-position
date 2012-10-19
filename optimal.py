@@ -5,10 +5,10 @@ def main():
 	columns = 5	
 	persons = []
 
-	persons.append(Person(4,0))
-	persons.append(Person(0,0))
-	persons.append(Person(2,3))
-	persons.append(Person(1,2))
+	persons.append(Person(2,2))
+	persons.append(Person(2,2))
+	persons.append(Person(2,2))
+	#persons.append(Person(1,2))
 
 	point = optimal_meeting_point(rows, columns, persons)
 	print point
@@ -36,7 +36,7 @@ def optimal_meeting_point(rows, columns, persons) :
 			optimalColDist = totalDist
 			optimalCol = j
 
-	return (i,j)
+	return (optimalRow,optimalCol)
 
 class Person :
 	def __init__(self, x, y) :
