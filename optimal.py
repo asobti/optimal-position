@@ -18,7 +18,7 @@ def optimal_meeting_point(rows, columns, persons) :
 	optimalRowDist = sys.maxint
 	optimalColDist = sys.maxint
 
-	for i in range(0,rows-1) :
+	for i in range(0,rows) :
 		totalDist = 0
 		for person in persons :
 			totalDist += abs(i - person.row)
@@ -27,7 +27,7 @@ def optimal_meeting_point(rows, columns, persons) :
 			optimalRowDist = totalDist
 			optimalRow = i
 
-	for j in range(0, columns-1) :
+	for j in range(0,columns) :
 		totalDist = 0
 		for person in persons :
 			totalDist += abs(j - person.col)
